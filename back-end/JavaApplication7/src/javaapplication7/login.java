@@ -76,5 +76,24 @@ public class login {
         }
 
     }
+    public void escolha(){
+        Scanner in = new Scanner(System.in);
+        System.out.print("Escolha teste(1: professor, 2 aluno): ");
+        int escolha = Integer.parseInt(in.nextLine());
+        loginEstudante log = new loginEstudante();
+        switch(escolha){
+            case 1:
+                testeBackEnd();
+                break;
+            case 2:
+                log.testeBackEnd();
+                break;
+            default:
+                System.err.println("Opção inválida");
+                escolha();
+                break;
+                
+        }
+    }
 
 }
