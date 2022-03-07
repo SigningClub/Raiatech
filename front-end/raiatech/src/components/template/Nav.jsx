@@ -1,6 +1,7 @@
 import './Nav.css'
+import Logo from "./Logo";
 
 export default props =>
-    <nav className="menu-area">
-        Navbar
+    <nav className="nav-bar">
+        <Logo />
     </nav>
