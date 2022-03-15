@@ -6,8 +6,14 @@ Raia Tech - Educação Gamificada
 
 # RESOLUÇÕES:
 ## Problema:
+- Aulas Monótonas
+- Falta de Atenção
+- Falta de Engajamento
 
 ## Solução:
+- Gamificação do Ensino
+- Atividades Atrativas
+- Tecnologia Educacional
 
 
 FERRAMENTAS UTILIZADAS:
