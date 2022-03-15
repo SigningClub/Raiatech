@@ -38,7 +38,7 @@ FUNCIONALIDADES:
 
 Desenvolvedores:
 -
-| [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Camila Fernanda Alves</sub>](https://github.com/camilafernanda) |  [<img src="https://avatars.githubusercontent.com/u/38091359?v=4" width=115><br><sub>Clóvis Ribeiro Júnior</sub>](https://github.com/crovim) |  [<img src="https://avatars.githubusercontent.com/u/37315196?v=4" width=115><br><sub>Guilherme Rossin</sub>](https://github.com/GuilhermeRossin) | [<img src="https://avatars.githubusercontent.com/u/21059035?v=4" width=115><br><sub>Erica Muniz</sub>](https://github.com/Erica08muniz) |
+| [<img src="https://avatars.githubusercontent.com/u/63179763?v=4" width=115><br><sub>Wallace Santana</sub>](https://github.com/WallaceSantana79) |  [<img src="https://avatars.githubusercontent.com/u/65429994?v=4" width=115><br><sub>Ebert Ryan</sub>](https://github.com/EbertRyan) |  [<img src="https://avatars.githubusercontent.com/u/37315196?v=4" width=115><br><sub>Guilherme Rossin</sub>](https://github.com/GuilhermeRossin) | [<img src="https://avatars.githubusercontent.com/u/21059035?v=4" width=115><br><sub>Erica Muniz</sub>](https://github.com/Erica08muniz) |
 | :---: | :---: | :---: | :---: 
 -
 -
