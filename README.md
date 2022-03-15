@@ -37,6 +37,6 @@ FUNCIONALIDADES:
 -
 
 Desenvolvedores:
--
+@Ebert_Ryan
 -
 -
