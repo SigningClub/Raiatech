@@ -1,8 +1,6 @@
 # Projeto de Project Labs I
 Raia Tech - Educação Gamificada
-<img src="https://raiatech.com.br/wp-content/uploads/2021/12/cropped-logo.png" alt="rails" width="150" height= "150" style="max-
-width:100%;"/>
-
+<img src="https://raiatech.com.br/wp-content/uploads/2021/12/cropped-logo.png" 
 
 
 TÓPICOS:
