@@ -24,5 +24,6 @@
         "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyrun.jar",
         "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyshared.jar",
         "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbytools.jar"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
