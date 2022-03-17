@@ -1,0 +1,29 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "back-end/JavaApplication7/dist/lib/derby.jar",
+        "back-end/JavaApplication7/dist/lib/derbyclient.jar",
+        "back-end/JavaApplication7/dist/lib/derbynet.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derby.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyclient.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_cs.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_de_DE.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_es.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_fr.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_hu.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_it.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_ja_JP.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_ko_KR.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_pl.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_pt_BR.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_ru.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_zh_CN.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyLocale_zh_TW.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbynet.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyoptionaltools.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyrun.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbyshared.jar",
+        "c:\\Users\\gabri\\Documents\\NetBeansProjects\\db-derby-10.15.2.0-bin\\db-derby-10.15.2.0-bin\\lib\\derbytools.jar"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
+}

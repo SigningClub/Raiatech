@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="back-end/demo/src/main/java"/>
+	<classpathentry kind="src" path="back-end/demo/src/test/java"/>
+	<classpathentry kind="src" path="back-end/JavaApplication7/src"/>
+	<classpathentry kind="lib" path="back-end/demo/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="output" path="back-end/JavaApplication7/build/classes"/>
+</classpath>
