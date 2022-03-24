@@ -32,13 +32,13 @@ width:100%;" title= "Java"/>
 
 # FUNCIONALIDADES:
 
-:heavy_check_mark: `Funcionalidade 1:`
+:heavy_check_mark: `Funcionalidade 1:` Login (Professor / Aluno) - Ambiente de Saber
 
-:heavy_check_mark: `Funcionalidade 2:`
+:heavy_check_mark: `Funcionalidade 2:` Cadastro de Questões (de Roteiros) Sub funcões - Cadastro de Modelos 3D - Cadastro de gamificação
 
-:heavy_check_mark: `Funcionalidade 3:`
+:heavy_check_mark: `Funcionalidade 3:` Cadastro de Lançamentos (de Roteiros)
 
-:heavy_check_mark: `Funcionalidade 4:`
+:heavy_check_mark: `Funcionalidade 4:` Comunicação de Dados com o App
 
 
 # DESENVOLVEDORES:
