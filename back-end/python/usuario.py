@@ -1,7 +1,14 @@
+from pydantic import BaseModel
+
 from conexaoBD import *
 
 
-class Usuario():
+class Usuario(BaseModel):
+
+    id_email_usuario: str
+    codigo_tipo_usuario: int
+    nome_usuario: str
+    senha_usuario: str
 
     def __init__(self, id_email_usuario=None, codigo_tipo_usuario=None, nome_usuario=None, senha_usuario=None):
         self.id_email_usuario = id_email_usuario
