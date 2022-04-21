@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from conexaoBD import *
+from db.conexaoBD import *
 
 
 class Config:

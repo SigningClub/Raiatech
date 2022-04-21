@@ -1,9 +1,10 @@
-
-from fastapi import FastAPI, Request, Form
-from fastapi.responses import HTMLResponse
+import uvicorn
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-import mysql.connector
+
+from models.usuario import *
+from models.tipoUsuario import *
 
 app = FastAPI()
 
@@ -11,77 +12,75 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
-
 @app.get("/")
 def main(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.post("/cadastro/")
-async def cadastro(nomeUsuario: str = Form(...), email: str = Form(...), senha: str = Form(...), tipo: int = Form(...)):
-    db_connection = mysql.connector.connect(host='bd_rt_teste.mysql.dbaas.com.br', user='bd_rt_teste', password='j1cr.9WCS72021', database='bd_rt_teste')
-    print("Conexão feita com sucesso!")
 
-    cursor = db_connection.cursor()
-    
-    sql = """INSERT INTO bd_rt_teste.TB_USR_Usuarios_RT
-            (USR_id_email_usuario, USR_nome_usuario, USR_senha_usuario, TPU_cod_tipo_usuario)
-            VALUES('{}', '{}', '{}', {});""".format(nomeUsuario,email,senha,tipo)
-    cursor.execute(sql)
-
-    cursor.close()
-    db_connection.commit()
-    db_connection.close()
-
-    return {"nomeUsuario": nomeUsuario, "email": email, "tipo": tipo}
+@app.get("/usuario")
+def get_all_users():
+    user = Usuario()
+    return user.consulta()
 
 
-@app.get("/cadastro/get")
-async def cadastro():
-    db_connection = mysql.connector.connect(host='bd_rt_teste.mysql.dbaas.com.br', user='bd_rt_teste', password='j1cr.9WCS72021', database='bd_rt_teste')
-    print("Conexão feita com sucesso!")
-
-    cursor = db_connection.cursor()
-    cursor.execute("select * from TB_USR_Usuarios_RT")
-    linha = cursor.fetchall()
-    
-    db_connection.commit()
-    db_connection.close()
-
-    return linha
+@app.get("/usuario/{id_email_usuario}")
+def get_user_by_id(id_email_usuario: str):
+    user = Usuario()
+    return user.consulta_usuario(id_email_usuario)
 
 
-@app.put("/cadastro/put")
-async def cadastro(nomeUsuario: str = Form(...), email: str = Form(...), senha: str = Form(...), tipo: int = Form(...)):
-    db_connection = mysql.connector.connect(host='bd_rt_teste.mysql.dbaas.com.br', user='bd_rt_teste', password='j1cr.9WCS72021', database='bd_rt_teste')
-    print("Conexão feita com sucesso!")
-
-    cursor = db_connection.cursor()
-    cursor.execute("""
-                    UPDATE TB_USR_Usuarios_RT
-                    SET USR_nome_usuario = '{}', USR_senha_usuario = '{}', TPU_cod_tipo_usuario = '{}'
-                    WHERE USR_id_email_usuario = '{}';
-
-                    """.format(nomeUsuario,senha,tipo,email))
+@app.post("/usuario")
+def set_user(id_email_usuario: str, codigo_tipo_usuario: int, nome_usuario: str, senha_usuario: str):
+    user = Usuario()
+    user.inserir(id_email_usuario, codigo_tipo_usuario, nome_usuario, senha_usuario)
+    return user
 
 
-    db_connection.commit()
-    db_connection.close()
-
-    return {"nomeUsuario": nomeUsuario, "email": email, "tipo": tipo}
-
-@app.delete("/cadastro/delete")
-async def cadastro(email: str = Form(...)):
-    db_connection = mysql.connector.connect(host='bd_rt_teste.mysql.dbaas.com.br', user='bd_rt_teste', password='j1cr.9WCS72021', database='bd_rt_teste')
-    print("Conexão feita com sucesso!")
-
-    cursor = db_connection.cursor()
-    cursor.execute("""
-                    DELETE FROM TB_USR_Usuarios_RT WHERE USR_id_email_usuario='{}';
-
-                    """.format(email))
+@app.put("/usuario/{id_email_usuario}")
+def put_user(id_email_usuario: str, codigo_tipo_usuario: int, nome_usuario: str, senha_usuario: str):
+    user = Usuario()
+    user.alterar(id_email_usuario, codigo_tipo_usuario, nome_usuario, senha_usuario)
+    return user
 
 
-    db_connection.commit()
-    db_connection.close()
+@app.delete("/usuario/{id_email_usuario}")
+def delete_user(id_email_usuario: str):
+    user = Usuario()
+    user.excluir(id_email_usuario)
+    return "Ok"
 
-    return {"email": email}
+@app.get("/tipousuario")
+def get_all_tipo_usuario():
+    tipo = TipoUsuario()
+    return tipo.consulta_todos()
+
+
+@app.get("/tipousuario/{id_tipo_user}")
+def get_tipo_by_id(id_tipo_user: str):
+    tipo = TipoUsuario()
+    return tipo.consulta_tipo_usuario(id_tipo_user)
+
+
+@app.post("/tipousuario")
+def set_tipo_usuario(id_tipo_user: str, descricao_tipo_usuario: str):
+    tipo = TipoUsuario()
+    tipo.inserir(id_tipo_user,descricao_tipo_usuario)
+    return tipo
+
+
+@app.put("/tipousuario/{id_tipo_user}")
+def put_tipo_user(id_tipo_user: str, descricao_tipo_usuario: str):
+    tipo = TipoUsuario()
+    tipo.alterar(id_tipo_user, descricao_tipo_usuario)
+    return tipo
+
+
+@app.delete("/tipousuario/{id_tipo_user}")
+def delete_tipo_user(id_tipo_user: str):
+    tipo = TipoUsuario()
+    tipo.excluir(id_tipo_user)
+    return "Deletado com sucesso"
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)
