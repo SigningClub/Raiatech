@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field, validator
 
 from db.conexaoBD import *
-from usuario import *
+from . import usuario
 
 
 class Config:

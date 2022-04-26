@@ -23,7 +23,6 @@ def get_all_users():
     user = Usuario()
     return user.consulta()
 
-
 @app.get("/usuario/{id_email_usuario}")
 def get_user_by_id(id_email_usuario: str):
     user = Usuario()
