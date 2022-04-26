@@ -5,6 +5,7 @@ from fastapi.templating import Jinja2Templates
 
 from models.usuario import *
 from models.tipoUsuario import *
+from models.ranking import *
 
 app = FastAPI()
 
@@ -81,6 +82,16 @@ def delete_tipo_user(id_tipo_user: str):
     tipo.excluir(id_tipo_user)
     return "Deletado com sucesso"
 
+@app.get("/ranking")
+def get_all_users():
+    user = Ranking()
+    return user.consulta()
+
+
+@app.get("/ranking/{id_email_usuario}")
+def get_user_by_id(id_email_usuario: str):
+    user = Ranking()
+    return user.consulta_usuario(id_email_usuario)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
