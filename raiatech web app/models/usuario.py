@@ -1,3 +1,6 @@
+import re
+from typing import List, Optional
+from fastapi import Request
 from pydantic import BaseModel, Field
 
 from db.conexaoBD import *
@@ -57,3 +60,21 @@ class Usuario(BaseModel):
         sql = f"SELECT * FROM TB_USR_Usuarios_RT WHERE USR_id_email_usuario = '{id_email_usuario}'"
         resultado = bd.executa_DQL(sql)
         return resultado
+class login:
+    def __init__(self, request:Request):
+        self.request: Request = request
+        self.erros: List = []
+        self.username: Optional[str]= None
+        self.password: Optional[str]= None
+    async def load_data(self):
+        form = await self.request.form()
+        self.username = form.get('USR_id_email_usuario')
+        self.password = form.get('USR_senha_usuario')
+    async def is_valid(self):
+        if not self.username or not (self.username.__contains__("@")):
+            self.erros.append("Email is not valid")
+        if not self.password or not len(self.password)>=4:
+            self.erros.append("Senha is not valid")
+        if not self.erros:
+            return True
+        return False

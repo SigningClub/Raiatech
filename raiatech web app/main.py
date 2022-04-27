@@ -17,7 +17,9 @@ templates = Jinja2Templates(directory="templates")
 def main(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-
+@app.get("/login")
+def login(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
 @app.get("/usuario")
 def get_all_users():
     user = Usuario()
