@@ -19,6 +19,7 @@ def main(request: Request):
 
 @app.get("/login")
 def login(request: Request):
+    user = Usuario()
     return templates.TemplateResponse("login.html", {"request": request})
 @app.get("/usuario")
 def get_all_users():
