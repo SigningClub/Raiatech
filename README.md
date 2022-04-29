@@ -21,8 +21,8 @@
 **Front-End:** <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="rails" width="50" height= "50" style="max-
 width:100%;" title= "React"/>
 
-**Back-End:** <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="rails" width="50" height= "50" style="max-
-width:100%;" title= "Java"/>
+**Back-End:** <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="rails" width="50" height= "50" style="max-
+width:100%;" title= "Python"/>
 
 
 # DESCRIÇÃO DO PROJETO:
