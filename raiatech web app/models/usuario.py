@@ -60,6 +60,25 @@ class Usuario(BaseModel):
         sql = f"SELECT * FROM TB_USR_Usuarios_RT WHERE USR_id_email_usuario = '{id_email_usuario}'"
         resultado = bd.executa_DQL(sql)
         return resultado
+
+    def verifica_login(self, id_email_usuario, senha_usuario):
+        bd = ConexaoBD(Config.host, Config.user, Config.password, Config.db)
+        sql = f"SELECT * FROM TB_USR_Usuarios_RT WHERE USR_id_email_usuario = '{id_email_usuario}' AND USR_senha_usuario = '{senha_usuario}'"
+        resultado = bd.executa_DQL(sql)
+        try:
+            extracao = resultado[0]
+            print(extracao[0])
+
+            if id_email_usuario in extracao[0] :
+                print("EMAIL ENCONTRADO!")
+            if senha_usuario in extracao[2]:
+                print("Senha correta!")
+                return True
+        except:
+            return False
+
+    
+
 class login:
     def __init__(self, request:Request):
         self.request: Request = request
