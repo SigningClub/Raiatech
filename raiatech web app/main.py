@@ -2,6 +2,8 @@ import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from fastapi.responses import RedirectResponse
+from forms import LoginForm
 
 from models.usuario import *
 from models.tipoUsuario import *
@@ -17,10 +19,20 @@ templates = Jinja2Templates(directory="templates")
 def main(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+
 @app.get("/login")
-def login(request: Request):
+def main(request: Request, id_email_usuario: str, senha_usuario: str):
     user = Usuario()
-    return templates.TemplateResponse("login.html", {"request": request})
+    recupera = user.verifica_login(id_email_usuario,senha_usuario)
+    print(id_email_usuario)
+
+    if recupera == True:
+        return RedirectResponse("/")
+    else:
+        return False
+
+    return templates.TemplateResponse("login.html",{"request": request})
+
 @app.get("/usuario")
 def get_all_users():
     user = Usuario()
