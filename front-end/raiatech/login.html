@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="login.css" />
+    <title>Login - Raia Tech</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Login</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Digite o Usuário" id="login"/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Digite a Senha" id="senha"/>
+            </div>
+            <input type="button" onclick="logar();" value = Entrar class="btn solid"/>
+            <p class="social-text">Ou Faça login com outras redes sociais</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>  
+              </a>
+            </div>
+            
+            <script>
+              function logar (){
+
+               var login = document.getElementById('login').value;
+               var senha = document.getElementById('senha').value;
+
+               if(login == "admin" && senha == "admin"){
+                alert('Seja Bem Vindo, Admin!');
+                location.href = "dashboard.html"; 
+               }else{
+               alert('Usuário ou senha incorreta, tente novamente!');
+               }
+               }
+            </script>
+
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Criar Conta</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Digite o Usuário" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Digite seu Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Digite sua Senha" />
+            </div>
+            <input type="submit" class="btn" value="Entrar" />
+            <p class="social-text">Ou utilize outras redes sociais</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Novo aqui ?</h3>
+            <p>
+              Insira seus dados e comece sua jornada conosco
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Criar Conta
+            </button>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Um de nós ?</h3>
+            <p>
+              Para se manter conectado conosco, faça login com suas informações pessoais
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Entrar
+            </button>
+          </div>
+          <img src="img/register.svg" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+    <script src="login.js"> </script>
+  </body>
+</html>
