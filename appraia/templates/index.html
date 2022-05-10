@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../static/css/style.css" rel="stylesheet">
+
+  <title>Raia Tech</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>R</span>aia <span>T</span>ech</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#Home" data-after="Home">Home</a></li>
+            <li><a href="#Serviços" data-after="Serviços">Serviços</a></li>
+            <li><a href="{% url 'logar_usuario' %}" data-after="Login">Login</a></li>
+            <li><a href="{% url 'create_user' %}" data-after="Criar Conta">Criar Conta</a></li>
+            <li><a href="#Download" data-after="Baixe Aqui">Download App</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Sua Plataforma Educacional <span></span></h1>
+        <h1>Gamificada com Realidade Aumentada <span></span></h1>
+        <h1>Raia Tech <span></span></h1>
+        <a href="#projects" type="button" class="cta">Clique aqui</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>R</span>aia <span>T</span>ech</h1>
+      </div>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://cdn-icons.flaticon.com/png/512/4494/premium/4494467.png?token=exp=1650408630~hmac=20fa02e4aef3bdd1d7462b713e52b105" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://cdn-icons.flaticon.com/png/512/4494/premium/4494465.png?token=exp=1650408630~hmac=e5a4c5a3d91edcb01e435f8ecdc4b2c8" /></a>
+        </div>
+      </div>
+      <p>Copyright © 2022 Raia Tech. </p>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="./app.js"></script>
+</body>
+
+</html>

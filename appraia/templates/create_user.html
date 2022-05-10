@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../static/css/style.css" rel="stylesheet">
+
+  <link href="../static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css"  media="screen,projection"/>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raia Tech</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+
+    <div class="header container-fluid" style="height: 100px;">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>R</span>aia <span>T</span>ech</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="{% url 'main' %}" data-after="Home">Home</a></li>
+            <li><a href="#Serviços" data-after="Serviços">Serviços</a></li>
+            <li><a href="{% url 'logar_usuario' %}" data-after="Login">Login</a></li>
+            <li><a href="{% url 'create_user' %}" data-after="Criar Conta">Criar Conta</a></li>
+            <li><a href="#Download" data-after="Baixe Aqui">Download App</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+  <section id="hero">
+    <div class="hero container-fluid">
+      <div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="form-group col s4 offset-s4" style="margin-top: 10%;">
+                    <label class="white-text">Username: </label>
+                    <input class="white-text" name="username">
+                </div>
+        </div>
+        <div class="row">
+            <div class="form-group col s4 offset-s4">
+                <label class="white-text">Email: </label>
+                <input class="white-text" type="email" name="email">
+            </div>
+            </div>
+        <div class="row">
+            <div class="form-group col s4 offset-s4">
+                <label class="white-text">Senha: </label>
+                <input class="white-text" type="password" name="password">
+            </div>
+            </div>
+            
+            <div class="row">
+                <div class="form-group col s4 offset-s5">
+                    <button type="submit" value="Cadastrar" class="btn btn-primary purple"><i class="material-icons right">send</i>Cadastrar</button>
+                </div>    
+            </div>
+            <div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </form>
+      </div>
+    </div>
+  </section>
+ 
+</body>
+
+</html>
