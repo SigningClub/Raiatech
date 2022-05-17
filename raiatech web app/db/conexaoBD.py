@@ -36,3 +36,5 @@ class ConexaoBD:
         self.conexao.commit()
         self.desconecta()
 
+    
+

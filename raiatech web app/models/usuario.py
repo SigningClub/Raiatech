@@ -18,7 +18,7 @@ class Usuario(BaseModel):
     id_email_usuario: str = Field(None, alias="USR_id_email_usuario")
     codigo_tipo_usuario: int = Field(None, alias="TPU_cod_tipo_usuario")
     nome_usuario: str = Field(None, alias="USR_nome_usuario")
-    senha_usuario: str = Field(None, alias="USR_nome_usuario")
+    senha_usuario: str = Field(None, alias="USR_senha_usuario")
 
     def set_usuario(self, id_email_usuario, codigo_tipo_usuario, nome_usuario, senha_usuario):
         self.id_email_usuario = id_email_usuario
@@ -77,23 +77,9 @@ class Usuario(BaseModel):
         except:
             return False
 
-    
-
-class login:
-    def __init__(self, request:Request):
-        self.request: Request = request
-        self.erros: List = []
-        self.username: Optional[str]= None
-        self.password: Optional[str]= None
-    async def load_data(self):
-        form = await self.request.form()
-        self.username = form.get('USR_id_email_usuario')
-        self.password = form.get('USR_senha_usuario')
-    async def is_valid(self):
-        if not self.username or not (self.username.__contains__("@")):
-            self.erros.append("Email is not valid")
-        if not self.password or not len(self.password)>=4:
-            self.erros.append("Senha is not valid")
-        if not self.erros:
-            return True
-        return False
+    def find_password(email):
+        bd = ConexaoBD(Config.host, Config.user, Config.password, Config.db)
+        sql = f"SELECT USR_senha_usuario FROM TB_USR_Usuarios_RT WHERE USR_id_email_usuario = '{email}';"
+        result = bd.executa_DQL(sql)
+        print(result)
+        return result

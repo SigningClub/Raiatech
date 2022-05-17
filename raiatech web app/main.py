@@ -3,35 +3,45 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse
-from forms import LoginForm
+from fastapi_login import LoginManager
+
 
 from models.usuario import *
 from models.tipoUsuario import *
 from models.ranking import *
 
 app = FastAPI()
-
+SECRET = 'G@LATIKA!MAT' 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
+manager = LoginManager(SECRET, token_url='/auth/token')
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/")
 def main(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+def load_user(id_email_usuario: str):
+    return get_user_by_id(id_email_usuario)
 
-@app.get("/login")
-def main(request: Request, id_email_usuario: str, senha_usuario: str):
-    user = Usuario()
-    recupera = user.verifica_login(id_email_usuario,senha_usuario)
-    print(id_email_usuario)
+@app.post("/login")
+def logar(user: Usuario):
+    email = user.id_email_usuario
+    senha = user.senha_usuario
 
-    if recupera == True:
-        return RedirectResponse("/")
-    else:
-        return False
+    set_user = Usuario.find_password(email)
+    user = load_user(email)
+    
+    if not user:
+        return {'error': 'User or Password invalid'}
 
-    return templates.TemplateResponse("login.html",{"request": request})
+    if set_user[0][0] != senha:
+        return {'error': 'User or Password invalid'}
+
+    access_token = manager.create_access_token(
+        data=dict(sub=email)
+    )
+
+    return {'access_token': access_token, 'token_type': 'bearer'}
 
 @app.get("/usuario")
 def get_all_users():
@@ -45,9 +55,8 @@ def get_user_by_id(id_email_usuario: str):
 
 
 @app.post("/usuario")
-def set_user(id_email_usuario: str, codigo_tipo_usuario: int, nome_usuario: str, senha_usuario: str):
-    user = Usuario()
-    user.inserir(id_email_usuario, codigo_tipo_usuario, nome_usuario, senha_usuario)
+def set_user(user: Usuario):
+    user.inserir(user.id_email_usuario, user.codigo_tipo_usuario, user.nome_usuario, user.senha_usuario)
     return user
 
 
