@@ -1,0 +1,14 @@
+.font-color{
+    color: rgb(208, 43, 214)
+}
+.font-size{
+    font-size: 2.5em;
+}
+.position-navbar{
+    position: relative;
+    font-size: 1.5em;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #FFFF00;
+    color: #FFC0CB;
+}
