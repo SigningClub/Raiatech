@@ -13,9 +13,9 @@ const Layout = () => {
                     </Navbar.Brand>
                     <Nav className="position-navbar">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/Serviços">Serviços</Nav.Link>
+                        <Nav.Link href="/servicos">Serviços</Nav.Link>
                         <Nav.Link href="/login">Login</Nav.Link>
-                        <Nav.Link href="/criar-conta">Criar Conta</Nav.Link>
+                        <Nav.Link href="/contact">Criar Conta</Nav.Link>
                         <Nav.Link href="/download">Dowload App</Nav.Link>
 
                     </Nav>
