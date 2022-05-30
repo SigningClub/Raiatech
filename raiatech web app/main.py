@@ -1,5 +1,6 @@
+from requests import Response
 import uvicorn
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, status, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse
@@ -35,19 +36,23 @@ def main(request: Request):
 def load_user(id_email_usuario: str):
     return get_user_by_id(id_email_usuario)
 
-@app.post("/login")
-def logar(user: Usuario):
+@app.post("/login", status_code=200)
+def logar(user: Usuario, response: Response):
     email = user.id_email_usuario
     senha = user.senha_usuario
 
+    print(email, senha)
     set_user = Usuario.find_password(email)
     user = load_user(email)
     
     if not user:
+        response.status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
         return {'error': 'User or Password invalid'}
 
     if set_user[0][0] != senha:
+        response.status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
         return {'error': 'User or Password invalid'}
+        
 
     access_token = manager.create_access_token(
         data=dict(sub=email)
