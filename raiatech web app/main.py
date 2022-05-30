@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse
 from fastapi_login import LoginManager
+from fastapi.middleware.cors import CORSMiddleware
 
 
 from models.usuario import *
@@ -11,6 +12,17 @@ from models.tipoUsuario import *
 from models.ranking import *
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 SECRET = 'G@LATIKA!MAT' 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 manager = LoginManager(SECRET, token_url='/auth/token')
